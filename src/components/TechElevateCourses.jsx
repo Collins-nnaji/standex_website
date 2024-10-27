@@ -3,29 +3,30 @@ import React from 'react'
 import { ArrowUpRight } from 'lucide-react';
 
 const TechElevateCourses = () => {
-    const courses = [
-        {
-          title: "Cloud Engineering, AI & DevOps",
-          description: "Master the fundamentals of cloud architecture, artificial intelligence, and DevOps practices. Learn to design, deploy, and manage scalable cloud solutions while implementing AI technologies and automated workflows.",
-          primaryLink: "https://buy.stripe.com/cN29CF2Uw5dk30A6op",
-          secondaryLink: "https://example.com/business-intelligence",
-          imagePath: "/images/CloudCourse.svg", // Add your image path here
-        },
-        {
-          title: "Power Platform: Low Code - No Code",
-          description: "Discover how to build professional applications without traditional coding. Learn to use Microsoft Power Platform to create efficient business solutions through low-code and no-code approaches.",
-          primaryLink: "https://buy.stripe.com/bIY1693YAcFMbx66os",
-          secondaryLink: "https://example.com/business-intelligence",
-          imagePath: "/images/PowerPlatformCourse.svg", // Add your image path here
-        },
-        {
-          title: "Business Intelligence",
-          description: "Transform raw data into meaningful insights. Learn to use BI tools to create powerful visualizations, reports, and dashboards that drive informed business decisions.",
-          primaryLink: "https://buy.stripe.com/bIYaGJeDe0X47gQ5kn",
-          secondaryLink: "https://example.com/business-intelligence",
-          imagePath: "/images/BusinessIntelligenceCourse.svg", // Add your image path here
-        }
-      ];
+  const courses = [
+    {
+        title: "Cloud Engineering, AI & DevOps",
+        description: "Master the fundamentals of cloud architecture, artificial intelligence, and DevOps practices. Learn to design, deploy, and manage scalable cloud solutions while implementing AI technologies and automated workflows.",
+        primaryLink: "https://buy.stripe.com/cN29CF2Uw5dk30A6op",
+        secondaryLink: "/CLOUD ENG - AI - DEVOPS.pdf", // Updated path to public folder
+        imagePath: "/images/CloudCourse.svg",
+    },
+    {
+        title: "Power Platform: Low Code - No Code",
+        description: "Discover how to build professional applications without traditional coding. Learn to use Microsoft Power Platform to create efficient business solutions through low-code and no-code approaches.",
+        primaryLink: "https://buy.stripe.com/bIY1693YAcFMbx66os",
+        secondaryLink: "/POWER PLATFORMS.pdf", // Updated path to public folder
+        imagePath: "/images/PowerPlatformCourse.svg",
+    },
+    {
+        title: "Business Intelligence",
+        description: "Transform raw data into meaningful insights. Learn to use BI tools to create powerful visualizations, reports, and dashboards that drive informed business decisions.",
+        primaryLink: "https://buy.stripe.com/bIYaGJeDe0X47gQ5kn",
+        secondaryLink: "/EXCEL-SQL-POWER BI.pdf", // Updated path to public folder
+        imagePath: "/images/BusinessIntelligenceCourse.svg",
+    }
+];
+
     
       const CourseCard = ({ course }) => (
         <div className="bg-[#ecffef] rounded-md  overflow-hidden transform transition duration-300 hover:scale-101 mb-8">
