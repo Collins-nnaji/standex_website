@@ -13,16 +13,23 @@ const trackPageView = (url) => {
   }
 };
 
-const App = () => {
+// RouteTracker Component to handle tracking on route changes
+const RouteTracker = () => {
   const location = useLocation();
 
   useEffect(() => {
     trackPageView(location.pathname + location.search);
   }, [location]);
 
+  return null; // This component doesn't render anything
+};
+
+const App = () => {
   return (
     <Router>
       <div className="overflow-x-hidden">
+        {/* Include RouteTracker to track route changes */}
+        <RouteTracker />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Tech-Elevate" element={<TechElevate />} />
