@@ -25,7 +25,7 @@ const ResponsiveMenu = ({ showMenu }) => {
         </ul>
       </div>
       {/* Optional Footer Section */}
-      <div className="text-center text-sm text-gray-500 mt-4">
+      <div className="text-center text-sm text-gray-500 mt-4 hidden md:block">
         <p>&copy; {new Date().getFullYear()} Standex Digital. All rights reserved.</p>
       </div>
     </div>
