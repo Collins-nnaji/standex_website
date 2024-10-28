@@ -7,7 +7,7 @@ const ResponsiveMenu = ({ showMenu }) => {
   return (
     <div
       className={`${showMenu ? "left-0" : "-left-full"} 
-      fixed top-0 bottom-0 w-[75%] transition-all duration-300 
+      fixed top-0  w-[75%] transition-all duration-300 
       shadow-md bg-white z-50 flex flex-col justify-between pt-16 px-8 pb-4`}
     >
       <div>

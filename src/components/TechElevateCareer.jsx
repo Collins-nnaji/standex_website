@@ -102,7 +102,7 @@ const TechElevateCareer = () => {
 
   const getVisibleCards = () => {
     const isLargeScreen = window.innerWidth >= 1024; // lg breakpoint
-    const cardsToShow = isLargeScreen ? 3 : 2;
+    const cardsToShow = isLargeScreen ? 3 : 1;
     let cards = [];
     
     for (let i = 0; i < cardsToShow; i++) {
@@ -123,7 +123,7 @@ const TechElevateCareer = () => {
         </div>
         
         <div className="relative px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {getVisibleCards().map((career, index) => (
               <div 
                 key={index}
