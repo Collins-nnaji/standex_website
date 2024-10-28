@@ -98,7 +98,7 @@ const TechElevateConnect = () => {
                 }
               }}
             >
-              Join our vibrant community and stay updated with the latest news, updates, and exclusive offers. Connect with us on Telegram to be part of our growing network of enthusiasts and professionals.
+              Join our vibrant community and stay updated with the latest news, updates, and exclusive offers. Connect with us on LinkedIn to be part of our growing network of enthusiasts and professionals.
             </motion.p>
             
             <motion.div 
