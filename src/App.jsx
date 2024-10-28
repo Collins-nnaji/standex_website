@@ -4,6 +4,7 @@ import Home from './components/Home';
 import TechElevate from './components/TechElevate';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
+// Google Analytics tracking function
 const trackPageView = (url) => {
   if (typeof window.gtag === 'function') {
     window.gtag('config', 'G-LLNKZEJCBP', {
@@ -20,20 +21,15 @@ const App = () => {
   }, [location]);
 
   return (
-    <div className="overflow-x-hidden">
-      <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/Tech-Elevate" element={<TechElevate />} /> 
-      </Routes>
-    </div>
+    <Router>
+      <div className="overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Tech-Elevate" element={<TechElevate />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
-// Wrapping App with Router to enable useLocation
-const AppWithRouter = () => (
-  <Router>
-    <App />
-  </Router>
-);
-
-export default AppWithRouter;
+export default App;
