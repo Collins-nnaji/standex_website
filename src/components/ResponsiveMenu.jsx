@@ -1,30 +1,33 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MenuLinks } from './Navbar';
 
 const ResponsiveMenu = ({ showMenu }) => {
   return (
     <div
-     className={`${showMenu? "left-0" : "left-[-100%]"}
-     fixed top-0  w-[75%] transition-all duration-300
-     shadow-md pt-16 px-8 bg-white z-50 flex flex-col justify-between pb-4 `}
+      className={`${showMenu ? "left-0" : "-left-full"} 
+      fixed top-0  w-[75%] transition-all duration-300 
+      shadow-md bg-white z-50 flex flex-col justify-between pt-16 px-8 pb-4`}
     >
-      <div className='card'>
-        {/Menu Section/}
-        <nav className=''>
-          <ul className='space-y-4 text-base'>
-            {MenuLinks.map(( { id, name, link }) => {
-              return(
-                <li key={id}>
-                  <a href={link} className='mb-4 inline-block'> {name}
-                  </a>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
+      <div>
+        <ul className="space-y-4 text-base">
+          {MenuLinks.map(({ id, name, link }) => (
+            <li key={id}>
+              <Link
+                to={link}
+                className="text-lg font-medium hover:text-primary transition-all duration-300"
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
-      {/Footer Section/}
-      <div></div>
+      {/* Optional Footer Section */}
+      <div className="text-center text-sm text-gray-500 mt-4">
+        <p>&copy; {new Date().getFullYear()} Standex Digital. All rights reserved.</p>
+      </div>
     </div>
   );
 };
