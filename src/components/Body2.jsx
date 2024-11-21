@@ -52,7 +52,7 @@ const Body2 = () => {
       title: "Intelligent Cloud Solutions",
       description: "Empower your business with scalable, secure, and efficient cloud-based systems that foster innovation and adaptability.",
       overview: "Standex Digital's Intelligent Cloud Solutions deliver a holistic approach to cloud transformation, ensuring your business achieves flexible, resilient, and optimized cloud environments. From designing secure cloud architectures to implementing containerized microservices, we tailor solutions to meet your specific needs. Leveraging cutting-edge technologies like AI, Docker, Kubernetes, and DevOps, our solutions enable an agile, scalable, and secure infrastructure that grows and evolves alongside your business. With Standex Digital, your cloud strategy becomes a foundation for innovation and operational excellence.",
-      price: "Based on project scope",
+      price: "[Amount based on Project Scope]",
       timeline: "8 - 16 weeks",
       features: [
         "Cloud Strategy & Architecture",
@@ -80,7 +80,7 @@ const Body2 = () => {
       description: "Accelerate innovation and automation through low-code solutions enhanced by AI-powered Copilot Studio.",
       overview: 
       "Our Power Platform Solutions, featuring Copilot Studio, empower your teams to design, automate, and deploy solutions with minimal coding expertise. By leveraging low-code tools like Power Apps, Power Automate, and Power BI, we deliver everything needed to automate workflows, build custom applications, and visualize data insights seamlessly. With Copilot Studio's AI-powered assistance, your teams can integrate intelligent support directly into their workflows, boosting productivity and enabling faster innovation for transformative results.",
-      price: "Based on project scope",
+      price: "[Amount based on Project Scope]",
       timeline: "6 - 10 weeks",
       features: [
         "Copilot Studio for AI-Powered Assistance",
@@ -107,7 +107,7 @@ const Body2 = () => {
       title: "Data Intelligence Solutions",
       description: "Transform your data into a strategic asset with comprehensive data warehousing, analytics, and governance.",
       overview: "Standex Digital's Data Intelligence Solutions provide a comprehensive suite designed to transform how your organization manages, analyzes, and secures data assets. By leveraging advanced data warehousing, real-time analytics, and robust governance frameworks, we empower your team to unlock meaningful insights, maintain high data quality, and ensure regulatory compliance. This solution goes beyond simple storage—it elevates data into a strategic asset, driving business growth, enhancing operational efficiency, and enabling smarter decision-making for a future-ready organization.",
-      price: "Based on project scope",
+      price: "[Amount based on Project Scope]",
       timeline: "8 - 12 weeks",
       features: [
         "Data Warehousing & Integration",
