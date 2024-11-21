@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react'
 import { LineChart, Brain, Boxes, Building2,Cloud,Database,Code2,BarChart3,Shield,AppWindow } from 'lucide-react';
 
@@ -135,20 +134,20 @@ const TechElevateCareer = () => {
                       <career.icon className={`w-8 h-8 ${career.iconColor}`} />
                     </div>
                     
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
                       {career.title}
                     </h3>
                     
-                    <p className="text-gray-600 leading-relaxed mb-4">
+                    <p className="text-gray-700 text-xl font-medium leading-relaxed mb-4">
                       {career.description}
                     </p>
 
                     <div className="mt-auto">
                       <div className="flex items-center space-x-2">
-                        <span className="text-gray-500 text-sm">Annual Salary</span>
+                        <span className="text-gray-900 text-2xl font-semibold">Annual Salary</span>
                         <div className="h-px flex-grow bg-gray-200"></div>
                       </div>
-                      <div className={`text-lg font-semibold ${career.salaryColor} mt-1`}>
+                      <div className={`text-2xl font-semibold ${career.salaryColor} mt-1`}>
                         {career.salary}
                       </div>
                     </div>

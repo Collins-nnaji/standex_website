@@ -1,8 +1,44 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Cloud, Database, Workflow, CheckCircle, Zap } from 'lucide-react';
 
 const Body2 = () => {
+  const headingRef = useRef(null);
+  const solutionRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe heading
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    // Observe solution cards
+    solutionRefs.current.forEach((ref, index) => {
+      if (ref) {
+        // Add a delay based on index for staggered animation
+        ref.style.transitionDelay = `${index * 200}ms`;
+        observer.observe(ref);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const services = [
     {
       theme: 'emerald',
@@ -15,7 +51,7 @@ const Body2 = () => {
       imageAlt: "Cloud computing infrastructure visualization",
       title: "Intelligent Cloud Solutions",
       description: "Empower your business with scalable, secure, and efficient cloud-based systems that foster innovation and adaptability.",
-      overview: "Standex Digital's Intelligent Cloud Solutions provide a holistic approach to cloud transformation. From designing secure cloud architecture to implementing containerized microservices, our service enables flexible, resilient, and optimized cloud environments. Our team leverages the latest advancements in AI, Docker, Kubernetes, and DevOps to provide you with an agile, scalable, and secure infrastructure that evolves with your business.",
+      overview: "Standex Digital's Intelligent Cloud Solutions deliver a holistic approach to cloud transformation, ensuring your business achieves flexible, resilient, and optimized cloud environments. From designing secure cloud architectures to implementing containerized microservices, we tailor solutions to meet your specific needs. Leveraging cutting-edge technologies like AI, Docker, Kubernetes, and DevOps, our solutions enable an agile, scalable, and secure infrastructure that grows and evolves alongside your business. With Standex Digital, your cloud strategy becomes a foundation for innovation and operational excellence.",
       price: "$20,000 - $75,000",
       timeline: "8 - 16 weeks",
       features: [
@@ -42,7 +78,8 @@ const Body2 = () => {
       imageAlt: "Power Platform dashboard interface",
       title: "Power Platform Solutions",
       description: "Accelerate innovation and automation through low-code solutions enhanced by AI-powered Copilot Studio.",
-      overview: "Our Power Platform Solutions, featuring Copilot Studio, enable your teams to design, automate, and deploy solutions with minimal coding knowledge. With low-code tools, Power Apps, Power Automate, and Power BI, we provide everything needed to automate workflows, build custom applications, and visualize data insights effortlessly. Copilot Studio brings AI assistance directly into your workflows, driving productivity and empowering teams to innovate faster than ever.",
+      overview: 
+      "Our Power Platform Solutions, featuring Copilot Studio, empower your teams to design, automate, and deploy solutions with minimal coding expertise. By leveraging low-code tools like Power Apps, Power Automate, and Power BI, we deliver everything needed to automate workflows, build custom applications, and visualize data insights seamlessly. With Copilot Studio's AI-powered assistance, your teams can integrate intelligent support directly into their workflows, boosting productivity and enabling faster innovation for transformative results.",
       price: "$15,000 - $45,000",
       timeline: "6 - 10 weeks",
       features: [
@@ -69,7 +106,7 @@ const Body2 = () => {
       imageAlt: "Data intelligence and analytics visualization",
       title: "Data Intelligence Solutions",
       description: "Transform your data into a strategic asset with comprehensive data warehousing, analytics, and governance.",
-      overview: "Standex Digital's Data Intelligence Solutions offer a complete suite for managing, analyzing, and securing your data assets. Through data warehousing, real-time analytics, and governance frameworks, we empower your organization to access meaningful insights, maintain data quality, and ensure compliance. This solution goes beyond mere storage, turning data into a valuable resource for strategic growth and operational optimization.",
+      overview: "Standex Digital's Data Intelligence Solutions provide a comprehensive suite designed to transform how your organization manages, analyzes, and secures data assets. By leveraging advanced data warehousing, real-time analytics, and robust governance frameworks, we empower your team to unlock meaningful insights, maintain high data quality, and ensure regulatory compliance. This solution goes beyond simple storage—it elevates data into a strategic asset, driving business growth, enhancing operational efficiency, and enabling smarter decision-making for a future-ready organization.",
       price: "$18,000 - $60,000",
       timeline: "8 - 12 weeks",
       features: [
@@ -88,13 +125,16 @@ const Body2 = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-gray-100 overflow-x-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <div 
+          ref={headingRef}
+          className="text-center mb-16 opacity-0 translate-y-12 transition-all duration-1000 ease-out"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Transformative Technology Solutions
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-2xl font-medium text-gray-700 max-w-2xl mx-auto leading-relaxed">
             Accelerate growth, streamline operations, and unlock actionable insights with our comprehensive digital services.
           </p>
         </div>
@@ -103,20 +143,21 @@ const Body2 = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
+              ref={el => solutionRefs.current[index] = el}
               className={`
-                bg-white overflow-hidden 
-                transition-all duration-300
+                bg-white overflow-hidden opacity-0
+                transition-all duration-1000 ease-in-out
               `}
             >
               <div className="flex flex-col">
                 <div className="px-6 pt-6 pb-4">
                   <h3 className={`
-                    text-2xl font-bold mb-2 
+                    text-3xl font-bold mb-2 
                     ${service.theme === 'blue' ? 'text-blue-900' : 'text-emerald-900'}
                   `}>
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-700 mb-4 text-xl font-medium leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -140,7 +181,7 @@ const Body2 = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <div className={`
-                      bg-white/10  p-2 rounded-lg
+                      bg-white/10 p-2 rounded-lg
                       ${service.theme === 'blue' 
                         ? 'bg-blue-500/10' 
                         : 'bg-emerald-500/10'
@@ -179,19 +220,19 @@ const Body2 = () => {
                         <h4 className={`
                           font-semibold 
                           ${service.theme === 'blue' 
-                            ? 'text-blue-900' 
-                            : 'text-emerald-900'
+                            ? 'text-blue-900 text-2xl' 
+                            : 'text-emerald-900 text-2xl'
                           }
                         `}>Solution Overview</h4>
                       </div>
-                      <p className="text-sm text-gray-700 leading-relaxed">
+                      <p className="text-xl font-medium text-gray-700 leading-relaxed">
                         {service.overview}
                       </p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-6">
                       <div className="bg-gray-50 p-4 rounded-lg">
-                        <h4 className="font-semibold text-gray-900 mb-3">Key Features</h4>
+                        <h4 className="font-semibold text-2xl text-gray-900 mb-3">Key Features</h4>
                         <div className="space-y-2">
                           {service.features.map((feature, fIndex) => (
                             <div key={fIndex} className="flex items-start gap-2">
@@ -202,14 +243,14 @@ const Body2 = () => {
                                   : 'text-emerald-500'
                                 }
                               `} />
-                              <span className="text-sm text-gray-600">{feature}</span>
+                              <span className="text-xl font-medium text-gray-700">{feature}</span>
                             </div>
                           ))}
                         </div>
                       </div>
 
                       <div className="bg-gray-50 p-4 rounded-lg">
-                        <h4 className="font-semibold text-gray-900 mb-3">Key Benefits</h4>
+                        <h4 className="font-semibold text-2xl text-gray-900 mb-3">Key Benefits</h4>
                         <div className="space-y-2">
                           {service.benefits.map((benefit, bIndex) => (
                             <div key={bIndex} className="flex items-start gap-2">
@@ -220,7 +261,7 @@ const Body2 = () => {
                                   : 'text-emerald-500'
                                 }
                               `} />
-                              <span className="text-sm text-gray-600">{benefit}</span>
+                              <span className="text-xl font-medium text-gray-700">{benefit}</span>
                             </div>
                           ))}
                         </div>
@@ -229,12 +270,12 @@ const Body2 = () => {
 
                     <div className="pt-4 border-t border-gray-200">
                       <div className="flex justify-between items-center">
-                        <div className="text-sm text-gray-600">Starting at</div>
-                        <div className="font-semibold text-gray-900">{service.price}</div>
+                        <div className="font-semibold text-2xl text-gray-900">Starting at</div>
+                        <div className="font-semibold text-2xl text-gray-900">{service.price}</div>
                       </div>
                       <div className="flex justify-between items-center mt-2">
-                        <div className="text-sm text-gray-600">Timeline</div>
-                        <div className="font-semibold text-gray-900">{service.timeline}</div>
+                        <div className="font-semibold text-2xl text-gray-900">Timeline</div>
+                        <div className="font-semibold text-2xl text-gray-900">{service.timeline}</div>
                       </div>
                     </div>
                   </div>
@@ -244,6 +285,13 @@ const Body2 = () => {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        .animate-in {
+          opacity: 1 !important;
+          transform: translate(0, 0) !important;
+        }
+      `}</style>
     </section>
   );
 };

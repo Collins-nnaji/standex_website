@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Shield, Wrench, Briefcase, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -89,11 +88,11 @@ const TechElevateWhyChoose = () => {
                     <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-100 to-blue-100 rounded-lg p-3 flex items-center justify-center group-hover:from-purple-200 group-hover:to-blue-200 transition-colors duration-300">
                       <feature.icon className="w-8 h-8 text-[#00936B]" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center flex items-center justify-center gap-2">
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4 text-center flex items-center justify-center gap-2">
                       {feature.title}
                       {feature.extraIcon && <feature.extraIcon />}
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-700 text-xl font-medium text-center leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

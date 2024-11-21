@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily:{
-        poppins: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],garamond: ['"Cormorant Garamond"', 'serif'],
+        sans: ['"Cormorant Garamond"', 'serif'],
       },
       colors: {
         'primary': '#1ab188',

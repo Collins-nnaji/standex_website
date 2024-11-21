@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import TechElevateHeroImage from '../assets/website/TechElevateHeroImage.png';
 import AiBot from '../assets/website/AiBot.png'
@@ -25,7 +24,7 @@ const TechElevateHero = () => {
                     Tech Elevate
                 </motion.h1>
                 <motion.h2 
-                 className='text-[#1b1b1b] text-3xl text-center md:text-left sm:text-3xl font-bold'
+                 className='text-[#1b1b1b] text-4xl text-center md:text-left sm:text-4xl font-bold leading-relaxed'
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ duration: 0.6, delay: 0.2 }}
@@ -33,7 +32,7 @@ const TechElevateHero = () => {
                     Your Gateway to Advanced Tech Skills
                 </motion.h2>
                 <motion.p 
-                 className="text-gray-600 text-center md:text-left"
+                 className="text-gray-700 text-2xl font-semibold text-center md:text-left leading-relaxed"
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ duration: 0.6, delay: 0.4 }}

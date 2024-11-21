@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import Logo from "../assets/website/logo.svg";
 import { Link, useNavigate } from 'react-router-dom';
@@ -65,7 +64,7 @@ const Navbar = () => {
                   <li key={id} className='cursor-pointer py-4'>
                     <span
                       onClick={() => handleLinkClick(link)}
-                      className='text-lg font-medium hover:text-primary py-2 
+                      className='text-xl font-semibold hover:text-primary py-2 
                       hover:border-b-2 hover:border-primary transition-all 
                       duration-300'
                     >

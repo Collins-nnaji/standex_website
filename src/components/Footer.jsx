@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Instagram, Mail } from 'lucide-react';
 
@@ -85,8 +84,8 @@ const Footer = () => {
           </div>
           
           {/* Copyright Text */}
-          <div className="text-md text-center">
-            © 2024 Standex Digital. All rights reserved.
+          <div className="text-lg font-semibold text-center">
+            ©️ 2024 Standex Digital. All rights reserved.
           </div>
         </div>
       </div>

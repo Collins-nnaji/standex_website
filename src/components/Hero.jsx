@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import HeroImg from '../assets/website/HeroImg.jpg';
 import ManSitting from '../assets/website/ManSitting.png';
@@ -17,7 +16,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <motion.h1 
-                 className="text-[#00936B] text-4xl text-center md:text-left sm:text-5xl font-bold"
+                 className="text-[#00936B] text-5xl text-center md:text-left sm:text-6xl font-bold"
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ duration: 0.6, delay: 0.2 }}
@@ -25,11 +24,11 @@ const Hero = () => {
                     Welcome to Your Digital Evolution
                 </motion.h1>
                 <motion.p 
-                 className="text-gray-600 text-center md:text-left"
+                 className="text-gray-700 text-center md:text-left text-2xl font-semibold leading-relaxed"
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ duration: 0.6, delay: 0.4 }}
-                >Enhance your journey with digital services, Dojo, and Tech Elevate training. <br />
+                >Enhance your journey with digital services and Tech Elevate training. <br />
                    Transform your business with innovative, scalable digital solutions backed by unmatched expertise and a collaborative, forward-thinking team.
                 </motion.p>
             </motion.div>

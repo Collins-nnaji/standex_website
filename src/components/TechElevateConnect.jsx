@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { motion } from 'framer-motion';
 
@@ -56,7 +55,7 @@ const TechElevateConnect = () => {
     >
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-3xl font-bold text-center mb-12 text-gray-800"
+          className="text-4xl font-bold text-center mb-12 text-gray-800"
           variants={itemVariants}
         >
           Connect With Us
@@ -88,7 +87,7 @@ const TechElevateConnect = () => {
             variants={itemVariants}
           >
             <motion.p 
-              className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed"
+              className="text-sm font-medium sm:text-xl lg:text-xl text-gray-700 leading-relaxed"
               variants={{
                 hidden: { opacity: 0, x: 50 },
                 visible: { 
@@ -98,7 +97,7 @@ const TechElevateConnect = () => {
                 }
               }}
             >
-              Join our vibrant community and stay updated with the latest news, updates, and exclusive offers. Connect with us on LinkedIn to be part of our growing network of enthusiasts and professionals.
+              Join our vibrant community and stay updated with the latest news, updates, and exclusive offers. Connect with us on Telegram to be part of our growing network of enthusiasts and professionals.
             </motion.p>
             
             <motion.div 
@@ -109,7 +108,7 @@ const TechElevateConnect = () => {
                 href="https://www.linkedin.com/company/standex-tech-elevate"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-primary hover:bg-[#007B5A] text-white text-sm sm:text-base font-medium transition-colors duration-300 ease-in-out"
+                className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-primary hover:bg-[#007B5A] text-white font-semibold text-xl lg:text-xl transition-colors duration-300 ease-in-out"
                 variants={buttonHoverVariants}
                 initial="initial"
                 whileHover="hover"
@@ -124,7 +123,7 @@ const TechElevateConnect = () => {
                 >
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.2-.04-.28-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.36-.49 1-.74 3.92-1.71 6.52-2.83 7.82-3.38 3.72-1.56 4.49-1.83 4.99-1.84.11 0 .35.03.5.16.13.13.16.3.18.43-.01.07-.01.15-.02.23z"/>
                 </motion.svg>
-               Join us on LinkedIn
+               Join us on Telegram
                </motion.a>
 
                <motion.a 
